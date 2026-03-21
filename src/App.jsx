@@ -29,7 +29,8 @@ import {
   BadgeCheck,
   Building2,
   Sparkles,
-  Globe2
+  Globe2,
+  ExternalLink
 } from 'lucide-react';
 
 // --- MOCK DATA ---
@@ -48,7 +49,8 @@ const initialProducts = [
     scans: 8942,
     verified: true,
     rating: 4.8,
-    reviews: 12450
+    reviews: 12450,
+    website: 'https://www.boat-lifestyle.com/'
   },
   {
     id: 'p2',
@@ -64,7 +66,8 @@ const initialProducts = [
     scans: 4320,
     verified: true,
     rating: 4.6,
-    reviews: 8920
+    reviews: 8920,
+    website: 'https://mamaearth.in/'
   },
   {
     id: 'p3',
@@ -80,7 +83,8 @@ const initialProducts = [
     scans: 256,
     verified: true,
     rating: 4.9,
-    reviews: 312
+    reviews: 312,
+    website: 'https://en.wikipedia.org/wiki/Kanchipuram_silk_sari'
   },
   {
     id: 'p4',
@@ -96,23 +100,8 @@ const initialProducts = [
     scans: 1250,
     verified: true,
     rating: 4.7,
-    reviews: 1840
-  },
-  {
-    id: 'p5',
-    name: 'MacBook Air M3',
-    artisan: 'Apple Inc.',
-    region: 'California, USA',
-    category: 'Electronics',
-    price: 114900,
-    image: 'https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&q=80&w=800',
-    shortDesc: 'Premium thin and light laptop designed by Apple.',
-    culturalValue: 'A globally recognized premium laptop known for its ecosystem, macOS, and minimalist design originated in Cupertino, California.',
-    economicBenefit: 'FOREIGN ORIGIN: As an imported brand, primary profits are exported. Contrast this with local tech brands that keep R&D and manufacturing wealth within the Indian economy.',
-    scans: 25300,
-    verified: false,
-    rating: 4.9,
-    reviews: 32100
+    reviews: 1840,
+    website: 'https://thehouseofrare.com/'
   },
   {
     id: 'p6',
@@ -128,39 +117,8 @@ const initialProducts = [
     scans: 5120,
     verified: true,
     rating: 4.5,
-    reviews: 14200
-  },
-  {
-    id: 'p7',
-    name: 'The Ordinary Niacinamide',
-    artisan: 'Deciem',
-    region: 'Ontario, Canada',
-    category: 'Beauty',
-    price: 600,
-    image: 'https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=800',
-    shortDesc: 'High-strength vitamin and mineral blemish formula.',
-    culturalValue: 'A Canadian clinical skincare brand focusing on functional beauty and active ingredients with transparent pricing.',
-    economicBenefit: 'FOREIGN ORIGIN: Purchasing imported skincare contributes less to local manufacturing ecosystems compared to homegrown Indian alternatives.',
-    scans: 12400,
-    verified: false,
-    rating: 4.7,
-    reviews: 45000
-  },
-  {
-    id: 'p8',
-    name: 'JBL Flip 6 Portable',
-    artisan: 'Harman International',
-    region: 'USA / Global',
-    category: 'Electronics',
-    price: 11999,
-    image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&q=80&w=800',
-    shortDesc: 'Waterproof portable Bluetooth speaker with deep bass.',
-    culturalValue: 'An American audio equipment brand, widely recognized globally for high-party-volume portable bluetooth speakers.',
-    economicBenefit: 'FOREIGN ORIGIN: As an imported electronics item, it misses the opportunity to support the "Make in India" hardware manufacturing ecosystem like local brands do.',
-    scans: 8900,
-    verified: false,
-    rating: 4.6,
-    reviews: 22400
+    reviews: 14200,
+    website: 'https://thedermaco.com/'
   },
   {
     id: 'p9',
@@ -176,7 +134,8 @@ const initialProducts = [
     scans: 6750,
     verified: true,
     rating: 4.4,
-    reviews: 18900
+    reviews: 18900,
+    website: 'https://www.gonoise.com/'
   },
   {
     id: 'p10',
@@ -192,23 +151,8 @@ const initialProducts = [
     scans: 15420,
     verified: true,
     rating: 4.8,
-    reviews: 54200
-  },
-  {
-    id: 'p11',
-    name: 'Dyson Airwrap Multi-Styler',
-    artisan: 'Dyson Ltd.',
-    region: 'Malmesbury, UK',
-    category: 'Beauty',
-    price: 45900,
-    image: 'https://images.unsplash.com/photo-1631730486784-5456119f69ae?auto=format&fit=crop&q=80&w=800',
-    shortDesc: 'Premium hair styling tool using the Coanda effect.',
-    culturalValue: 'A globally renowned British technology company known for high-end engineering in household appliances and hair care.',
-    economicBenefit: 'FOREIGN ORIGIN: A highly premium imported product where the majority of the high profit margin leaves the Indian economy.',
-    scans: 3200,
-    verified: false,
-    rating: 4.7,
-    reviews: 8900
+    reviews: 54200,
+    website: 'https://www.patanjaliayurved.net/'
   },
   {
     id: 'p12',
@@ -224,23 +168,76 @@ const initialProducts = [
     scans: 9850,
     verified: true,
     rating: 4.6,
-    reviews: 12300
+    reviews: 12300,
+    website: 'https://www.fabindia.com/'
   },
   {
-    id: 'p13',
-    name: 'Nike Air Jordan 1 Retro',
-    artisan: 'Nike Inc.',
-    region: 'Oregon, USA',
+    id: 'p14',
+    name: 'Lenskart Air Classic',
+    artisan: 'Lenskart Solutions',
+    region: 'Rajasthan, India',
     category: 'Apparel',
-    price: 11495,
-    image: 'https://images.unsplash.com/photo-1597045566677-8cf032ed6634?auto=format&fit=crop&q=80&w=800',
-    shortDesc: 'Classic basketball sneakers with iconic global streetwear status.',
-    culturalValue: 'Deeply rooted in American basketball and global sneakerhead culture, representing decades of sports marketing history.',
-    economicBenefit: 'FOREIGN ORIGIN: High-margin imported footwear. Buying local Indian shoe brands retains manufacturing and corporate wealth domestically.',
-    scans: 28400,
-    verified: false,
+    price: 1500,
+    image: 'https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&q=80&w=800',
+    shortDesc: 'Ultra-lightweight flexible eyeglasses designed for daily wear.',
+    culturalValue: 'Lenskart revolutionized the Indian eyewear market by manufacturing high-quality, affordable glasses locally in their mega-factory in Bhiwadi.',
+    economicBenefit: 'Creates thousands of manufacturing jobs in Rajasthan and reduces dependence on imported eyewear frames and lenses.',
+    scans: 18200,
+    verified: true,
+    rating: 4.7,
+    reviews: 45000,
+    website: 'https://www.lenskart.com/'
+  },
+  {
+    id: 'p15',
+    name: 'Nykaa Matte Lipstick',
+    artisan: 'FSN E-Commerce (Nykaa)',
+    region: 'Maharashtra, India',
+    category: 'Beauty',
+    price: 399,
+    image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&q=80&w=800',
+    shortDesc: 'Long-lasting matte lipstick tailored for Indian skin tones.',
+    culturalValue: 'Nykaa started as an aggregator but successfully built its own homegrown beauty label that perfectly understands Indian consumer needs.',
+    economicBenefit: 'Keeps beauty and cosmetics spending within the Indian economy, competing directly with major international makeup conglomerates.',
+    scans: 12500,
+    verified: true,
+    rating: 4.5,
+    reviews: 32000,
+    website: 'https://www.nykaa.com/'
+  },
+  {
+    id: 'p16',
+    name: 'Wildcraft Rucksack 45L',
+    artisan: 'Wildcraft India',
+    region: 'Karnataka, India',
+    category: 'Apparel',
+    price: 2199,
+    image: 'https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&q=80&w=800',
+    shortDesc: 'Durable, weather-resistant trekking backpack.',
+    culturalValue: 'Born out of a passion for outdoor exploration in the Western Ghats, Wildcraft is India’s foremost homegrown outdoor and adventure gear brand.',
+    economicBenefit: 'Manufactured across multiple facilities in India, supporting local textile and gear manufacturing against foreign outdoor brands.',
+    scans: 8900,
+    verified: true,
+    rating: 4.8,
+    reviews: 15600,
+    website: 'https://wildcraft.com/'
+  },
+  {
+    id: 'p17',
+    name: 'Amul Pure Milk Butter',
+    artisan: 'GCMMF (Amul)',
+    region: 'Gujarat, India',
+    category: 'FMCG',
+    price: 540,
+    image: 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&q=80&w=800',
+    shortDesc: 'The classic, utterly butterly delicious Indian butter.',
+    culturalValue: 'A symbol of India’s White Revolution. Amul is a cooperative model that transformed India from a milk-deficient nation to the world’s largest milk producer.',
+    economicBenefit: 'Owned by 3.6 million milk producers in Gujarat. Every purchase directly benefits Indian farmers rather than corporate shareholders.',
+    scans: 45000,
+    verified: true,
     rating: 4.9,
-    reviews: 88500
+    reviews: 125000,
+    website: 'https://amul.com/'
   }
 ];
 
@@ -644,9 +641,16 @@ export default function LokritiApp() {
               </div>
               <div>
                 <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-0.5">Manufactured By</p>
-                <p className="text-base font-bold text-gray-900 flex items-center gap-1.5">
-                  {selectedProduct.artisan}
-                </p>
+                <div className="flex items-center gap-2">
+                  <p className="text-base font-bold text-gray-900 flex items-center gap-1.5">
+                    {selectedProduct.artisan}
+                  </p>
+                  {selectedProduct.website && (
+                    <a href={selectedProduct.website} target="_blank" rel="noopener noreferrer" className="bg-blue-50 text-blue-600 hover:bg-blue-100 hover:text-blue-700 p-1.5 rounded-full transition-colors" title="Visit Official Website">
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                </div>
                 <p className="text-sm text-gray-500 flex items-center gap-1 font-medium mt-0.5">
                   <MapPin className="w-3 h-3"/>{selectedProduct.region}
                 </p>
