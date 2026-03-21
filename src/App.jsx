@@ -189,23 +189,6 @@ const initialProducts = [
     website: 'https://www.lenskart.com/'
   },
   {
-    id: 'p15',
-    name: 'Nykaa Matte Lipstick',
-    artisan: 'FSN E-Commerce (Nykaa)',
-    region: 'Maharashtra, India',
-    category: 'Beauty',
-    price: 399,
-    image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&q=80&w=800',
-    shortDesc: 'Long-lasting matte lipstick tailored for Indian skin tones.',
-    culturalValue: 'Nykaa started as an aggregator but successfully built its own homegrown beauty label that perfectly understands Indian consumer needs.',
-    economicBenefit: 'Keeps beauty and cosmetics spending within the Indian economy, competing directly with major international makeup conglomerates.',
-    scans: 12500,
-    verified: true,
-    rating: 4.5,
-    reviews: 32000,
-    website: 'https://www.nykaa.com/'
-  },
-  {
     id: 'p16',
     name: 'Wildcraft Rucksack 45L',
     artisan: 'Wildcraft India',
