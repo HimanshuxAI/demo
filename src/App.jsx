@@ -204,23 +204,6 @@ const initialProducts = [
     rating: 4.8,
     reviews: 15600,
     website: 'https://wildcraft.com/'
-  },
-  {
-    id: 'p17',
-    name: 'Amul Pure Milk Butter',
-    artisan: 'GCMMF (Amul)',
-    region: 'Gujarat, India',
-    category: 'FMCG',
-    price: 540,
-    image: 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&q=80&w=800',
-    shortDesc: 'The classic, utterly butterly delicious Indian butter.',
-    culturalValue: 'A symbol of India’s White Revolution. Amul is a cooperative model that transformed India from a milk-deficient nation to the world’s largest milk producer.',
-    economicBenefit: 'Owned by 3.6 million milk producers in Gujarat. Every purchase directly benefits Indian farmers rather than corporate shareholders.',
-    scans: 45000,
-    verified: true,
-    rating: 4.9,
-    reviews: 125000,
-    website: 'https://amul.com/'
   }
 ];
 
@@ -537,7 +520,7 @@ export default function LokritiApp() {
                   </div>
                   <button 
                     onClick={() => removeFromCart(index)}
-                    className="p-2.5 text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors bg-gray-50 rounded-full mr-2"
+                    className="p-2.5 text-gray-400 hover:text-red-50 hover:bg-red-50 transition-colors bg-gray-50 rounded-full mr-2"
                   >
                     <X className="w-5 h-5" />
                   </button>
