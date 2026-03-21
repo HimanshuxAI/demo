@@ -204,6 +204,23 @@ const initialProducts = [
     rating: 4.8,
     reviews: 15600,
     website: 'https://wildcraft.com/'
+  },
+  {
+    id: 'p18',
+    name: 'Oversized Graphic T-Shirt',
+    artisan: 'Bonkers Corner',
+    region: 'Maharashtra, India',
+    category: 'Apparel',
+    price: 999,
+    image: 'https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?auto=format&fit=crop&q=80&w=800',
+    shortDesc: 'Premium oversized streetwear graphic t-shirt.',
+    culturalValue: 'Bonkers Corner is a homegrown Indian streetwear brand that brings global fashion trends to the Indian youth at accessible prices.',
+    economicBenefit: 'Designed and manufactured in India, boosting local apparel manufacturing and supporting homegrown fashion startups.',
+    scans: 14500,
+    verified: true,
+    rating: 4.6,
+    reviews: 24500,
+    website: 'https://www.bonkerscorner.com/'
   }
 ];
 
@@ -375,28 +392,7 @@ export default function LokritiApp() {
           <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 mb-1 leading-tight">Discover</h2>
           <h3 className="text-xl font-medium text-gray-500 mb-6">Verified Indian Brands</h3>
           
-          {/* New Featured Hero Banner */}
-          {!searchQuery && activeCategory === 'All' && (
-            <div className="mb-8 group cursor-pointer relative overflow-hidden rounded-[28px] shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-rose-500 transition-transform duration-700 group-hover:scale-105"></div>
-              {/* Abstract decorative background */}
-              <div className="absolute -right-10 -top-10 w-40 h-40 bg-white/20 rounded-full blur-2xl"></div>
-              <div className="absolute -left-10 -bottom-10 w-32 h-32 bg-amber-300/30 rounded-full blur-xl"></div>
-              
-              <div className="relative z-10 p-6 flex flex-col justify-between h-[160px]">
-                <div>
-                  <span className="bg-white/25 backdrop-blur-md px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider text-white mb-3 inline-block shadow-sm">Featured</span>
-                  <h3 className="text-2xl font-black leading-tight text-white mb-1 shadow-sm">The Handloom Heritage Sale</h3>
-                  <p className="text-sm font-medium text-white/90">Support direct weavers this festive season.</p>
-                </div>
-                <div className="flex items-center gap-1 text-white font-bold text-sm">
-                  Explore <ChevronRight className="w-4 h-4" />
-                </div>
-              </div>
-            </div>
-          )}
-          
-          <div className="mt-2 mb-5 relative group">
+          <div className="mt-6 mb-5 relative group">
             <Search className="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors" />
             <input 
               type="text" 
